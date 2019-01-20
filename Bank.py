@@ -205,3 +205,9 @@ class Bill:
             Bank.money_count -= self.value * self.amount
         else:
             self.amount = 0
+
+        if Bank.money_count > 0 and bill_value == 1:
+            self.amount += Bank.money_count
+            Bank.money_count = 0
+        else:
+            pass
